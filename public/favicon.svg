@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shrimpBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF233C"/>
+      <stop offset="100%" stop-color="#9F0003"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 150 C40 140 30 110 45 85 C55 68 75 55 100 52 C130 48 150 65 155 90 C158 105 150 118 138 122 L142 135 L128 132 L124 145 L112 140 C95 150 75 155 60 150 Z"
+        fill="url(#shrimpBody)"/>
+  <circle cx="140" cy="80" r="6" fill="#050507"/>
+  <path d="M148 70 L165 55" stroke="#EF233C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M150 76 L170 68" stroke="#EF233C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M70 148 L58 168" stroke="#9F0003" stroke-width="5" stroke-linecap="round"/>
+  <path d="M85 152 L78 172" stroke="#9F0003" stroke-width="5" stroke-linecap="round"/>
+  <path d="M100 150 L98 172" stroke="#9F0003" stroke-width="5" stroke-linecap="round"/>
+</svg>
