@@ -1,86 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=space-grotesk@400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=space-grotesk@400,500,600,700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/*
-  Rakta.js color variables.
-  Stored as "R G B" triplets so Tailwind's `<alpha-value>` opacity
-  modifiers (bg-primary/50, text-text-muted/80, ...) work everywhere.
-*/
-:root {
-  --color-bg-main: 5 5 7;           /* #050507 */
-  --color-bg-deep: 3 3 4;           /* #030304 */
-  --color-bg-surface: 11 15 22;     /* #0B0F16 */
-  --color-bg-elevated: 17 24 39;    /* #111827 */
-  --color-bg-card: 14 17 26;        /* #0E111A */
+@theme {
+  /* Background */
+  --color-bg-main: #050507;
+  --color-bg-deep: #030304;
+  --color-bg-surface: #0b0f16;
+  --color-bg-elevated: #111827;
+  --color-bg-card: #0e111a;
 
-  --color-border-subtle: 255 255 255;  /* used with low alpha, e.g. border-border-subtle/10 */
-  --color-border-strong: 198 0 5;      /* used with alpha, e.g. border-border-strong/45 */
+  /* Border */
+  --color-border-subtle: rgb(255 255 255);
+  --color-border-strong: #c60005;
 
-  --color-text-main: 248 250 252;   /* #F8FAFC */
-  --color-text-muted: 148 163 184;  /* #94A3B8 */
-  --color-text-subtle: 100 116 139; /* #64748B */
+  /* Text */
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
 
-  --color-primary: 198 0 5;         /* #C60005 */
-  --color-primary-bright: 239 35 60; /* #EF233C */
-  --color-primary-dark: 159 0 3;     /* #9F0003 */
-
-  --color-accent-white: 255 255 255;
+  /* Brand */
+  --color-primary: #c60005;
+  --color-primary-bright: #ef233c;
+  --color-primary-dark: #9f0003;
+  --color-accent-white: #ffffff;
 }
 
-body {
-  @apply bg-bg-main text-text-main antialiased;
-  font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    @apply bg-bg-main text-text-main antialiased;
+
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  pre,
+  code {
+    font-family: "JetBrains Mono", monospace;
+  }
 }
 
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Space Grotesk', sans-serif;
+@layer components {
+  .glass-panel {
+    @apply border border-border-subtle/10 bg-bg-card shadow-[0_4px_24px_rgba(0,0,0,0.4)];
+  }
+
+  .nav-link {
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: "";
+
+    @apply absolute bottom-[-4px] left-0 h-0.5 w-0 bg-primary;
+
+    transition: width 0.2s ease;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .dropdown-menu {
+    @apply hidden;
+  }
+
+  .dropdown-trigger:hover .dropdown-menu {
+    @apply block;
+  }
 }
 
-pre, code, .font-mono {
-  font-family: 'JetBrains Mono', monospace;
-}
+/* ─────────────────────────────────────────────────────────────
+   Utilities
+   ───────────────────────────────────────────────────────────── */
 
-.pattern-cloud {
-  background-image: theme('backgroundImage.cloud');
-  background-size: 100px 100px;
-}
+@layer utilities {
+  .font-heading {
+    font-family: "Space Grotesk", sans-serif;
+  }
 
-.glass-panel {
-  @apply bg-bg-card border border-border-subtle/10 shadow-[0_4px_24px_rgba(0,0,0,0.4)];
-}
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
 
-.nav-link {
-  position: relative;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  @apply bg-primary;
-  transition: width 0.2s ease;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
 
-.dropdown-menu {
-  display: none;
-}
-.dropdown-trigger:hover .dropdown-menu {
-  display: block;
-}
-
-/* thin scrollbar for the docs sidebar / TOC */
-.thin-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.thin-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-bg-elevated rounded-full;
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-bg-elevated;
+  }
 }
