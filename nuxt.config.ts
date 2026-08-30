@@ -15,12 +15,12 @@ export default defineNuxtConfig({
       title: "Docs",
       htmlAttrs: { lang: "id" },
       meta: [
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          name: "description",
-          content:
-            "Website dokumentasi dibangun dengan Nuxt 4 dan Nuxt Content",
-        },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+        { name: 'description', content: 'A lightweight, composable frontend framework on Bun.' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/raktajs.svg' },
       ],
     },
   },
