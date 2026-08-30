@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'A lightweight, composable frontend framework on Bun.' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/raktajs.svg' },
       ],
     },
   },

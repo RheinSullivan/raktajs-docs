@@ -32,17 +32,17 @@ const dropdownOpen = ref(false)
       </nav>
 
       <div class="flex items-center gap-4">
-        <a href="https://github.com" target="_blank" class="text-text-muted hover:text-white transition-colors">
+        <a href="https://github.com/RheinSullivan/raktajs" target="_blank" class="text-text-muted hover:text-white transition-colors">
           <Icon name="lucide:github" class="text-xl" />
         </a>
         <button class="text-text-muted hover:text-white transition-colors">
           <Icon name="lucide:moon" class="text-lg" />
         </button>
-        <div class="flex items-center gap-1 text-xs font-medium text-text-muted border border-border-subtle/10 rounded px-2 py-1">
+        <!-- <div class="flex items-center gap-1 text-xs font-medium text-text-muted border border-border-subtle/10 rounded px-2 py-1">
           <span class="text-white">EN</span>
           <span class="opacity-50">/</span>
           <span>ID</span>
-        </div>
+        </div> -->
         <NuxtLink
           to="/docs/introduction"
           class="ml-4 px-5 py-2 rounded text-sm font-semibold bg-primary hover:bg-primary-bright text-white transition-colors flex items-center gap-2"
